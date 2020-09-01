@@ -92,15 +92,6 @@ public class ServerController {
 	}
 	
 
-//	@PostMapping("/ajouter")
-//	public ResponseEntity<Server> ajouterProduit(@RequestBody Server server, HttpServletRequest request) throws URISyntaxException{
-//		  Server serverExixting = serverRepository.findByLibelle(server.getLibelle()); 
-//		   if(serverExixting != null) {
-//			   throw new RuntimeException("Ce nom de server est deja occupe");
-//		   }
-//	     Server resultat = serverRepository.save(server);    
-//	     return ResponseEntity.created(new URI("api/ajouter/" + resultat.getId())).body(resultat);
-//	}
 	
 	@PostMapping("/ajouter")
 	public Server ajouterServeur(@RequestBody Server server) {
@@ -131,16 +122,8 @@ public class ServerController {
 	       return ResponseEntity.ok().build();
 	}
 	
-	
-//	@RequestMapping("/rechercher")
-//	public Page<Server> chercherParMotCle(@RequestParam(name = "mc" , defaultValue = "") String mc , 
-//			                             @RequestParam(name = "page" , defaultValue = "0") int page , 
-//			                             @RequestParam(name = "size" , defaultValue = "5") int size){
-//		return serverRepository.Rechercher("%"+mc+"%",false,PageRequest.of(page, size, Sort.by(Sort.Direction.DESC,"id")));
-//		
-//	}
-	
-	
+
+		
 	
 	
 
@@ -333,20 +316,8 @@ public class ServerController {
 			                 }
 				       Message.creator(new PhoneNumber(existingServeurNumber.getNumero()), new PhoneNumber(TWILIO_NUMBER),
 				    		   " Votre server " + serv.getHost() + " vient d'etre redemarre par le user " + serv.getLogin() 
-						       + " la requete a ete initiée par le ip distant suivant " + request.getRemoteAddr()).create();
+					         + " la requete a ete initiée par le ip distant suivant " + request.getRemoteAddr()).create();
 				       
-//				       OkHttpClient client = new OkHttpClient();
-//
-//				       MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-//				       RequestBody body = RequestBody.create(mediaType, "username=yacoubc01@gmail.com&password=your_password&sender_id=your_sender_id&phone=your_receiver_phone_number&message=your_message_here");
-//				       Request request = new Request.Builder()
-//				         .url("https://vavasms.com/api/v1/text/single")
-//				         .post((com.squareup.okhttp.RequestBody) body)
-//				         .addHeader("Content-Type", "application/x-www-form-urlencoded")
-//				         .addHeader("Accept", "/")
-//				         .addHeader("Host", "vavasms.com")
-//				         .build();
-//				       Response response = client.newCall(request).execute();
 				       
   //============================================================Fin Sms==================================================================================================//			
 		}    
@@ -358,8 +329,7 @@ public class ServerController {
  }
 	
 	
-	
-	
+		
 
 @PostMapping("/redemarrerAll")
 public List<Server> RedemarrageAllServer() throws JSchException, IOException{
@@ -467,9 +437,7 @@ public List<Server> RedemarrageAllServer() throws JSchException, IOException{
 	
 
 
- 
- 
- 
+  
  
   @PostMapping("/miseAjourMachine")
   public String UpdateOsServer(@RequestBody Server serv) throws JSchException, IOException{
