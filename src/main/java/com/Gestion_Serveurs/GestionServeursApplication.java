@@ -27,14 +27,14 @@ public class GestionServeursApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		serverRepository.save(new Server(null,"ubuntu2","192.168.0.3","cisse", 
-				"78773960#","yacoubc01@gmail.com","+22578773960"));
+				"789521","email","+22578773960"));
 		
 		serverRepository.save(new Server(null,"ubuntu3","192.168.0.104","cisse", 
-				"78773960#","yacoubc01@gmail.com","+22578773960"));
+				"12345896","email","+22578773960"));
 
 
 		serverRepository.save(new Server(null,"ubuntu4","192.168.0.105","cisse", 
-				"78773960#","yacoubc01@gmail.com","+22578773960"));
+				"1234589","email","+22578773960"));
 
        
 	
@@ -47,8 +47,8 @@ public class GestionServeursApplication implements CommandLineRunner {
 	       mailSender.setHost("smtp.gmail.com");
 	       mailSender.setPort(587);
 
-	       mailSender.setUsername("yacoubc01@gmail.com");
-	       mailSender.setPassword("78773960#");
+	       mailSender.setUsername("email@gmail.com");
+	       mailSender.setPassword("8968523");
 
 	       Properties props = mailSender.getJavaMailProperties();
 	       props.put("mail.transport.protocol", "smtp");
